@@ -1,0 +1,17 @@
+<h3>My Activity</h3>
+<p>Search: <input type="text" ng-model="mySearch" class="search-query" 
+	placeholder="Enter a name or email here" ng-change="searchUser()" />
+<table class="table table-bordered pull-left">
+    <thead>
+    	<th>Id</th>
+    	<th>Name</th>
+    	<th>Email</th>
+    	<th>Action</th>
+    </thead>
+    <tr ng-repeat="user in users.data | filter:search" >
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td><a class="btn btn-success" ng-click="addFriend(user.id)"><i class="icon-plus icon-white"></i>Add Friend</a></td>
+    </tr>
+</table>

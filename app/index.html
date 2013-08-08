@@ -1,0 +1,116 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <!-- build:css({.tmp,app}) styles/main.css -->
+        <link rel="stylesheet" href="styles/bootstrap.css">
+        <!-- endbuild -->
+</head>
+  <body ng-app="watchinApp">
+    <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="bower_components/es5-shim/es5-shim.js"></script>
+      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span10 offset1">
+                <h1 class="well" ><a href="#/home">Watchin</a></h1>
+                <div>
+                	<h4 class="pull-right muted text-info" ng-show="loggedIn">Welcome {{userName}}</h4><br><br>
+                	<div ng-show="loggedIn" class="pull-right">
+                		<div class="btn-group">
+                			<a href="#/home" class='tdright btn btn-info'><i class="icon-home icon-white"></i></a>
+                		</div>
+                		<div class="btn-group">
+						    <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
+						      Channels
+						      <span class="caret"></span>
+						    </button>
+						    <ul class="dropdown-menu">
+						      <li><a href="#/channel_list">All Channels</a></li>
+						      <li><a href="#/channel_list">Favorite Channel</a></li>
+						    </ul>
+					    </div>
+                		<div class="btn-group">
+						    <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
+						      Friends
+						      <span class="caret"></span>
+						    </button>
+						    <ul class="dropdown-menu">
+						      <li><a href="#/my_friends">My friends</a></li>
+						      <li><a href="#/approve_requests">Friend Requests</a></li>
+						    </ul>
+					    </div>
+                	    <div class="btn-group">
+						    <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
+						      <i class="icon-user icon-white"></i>
+						      <span class="caret"></span>
+						    </button>
+						    <ul class="dropdown-menu">
+						      <li><a href="#/user_profile">My Profile</a></li>
+						      <li><a href="#/logout">Logout</a></li>
+						    </ul>
+					    </div>
+					</div>
+					
+					<div ng-show="loggedOut" class="pull-right">
+						<div class="btn-group">
+						    <button class="btn dropdown-toggle btn-info" data-toggle="dropdown">
+						      Channels
+						      <span class="caret"></span>
+						    </button>
+						    <ul class="dropdown-menu">
+						      <li><a href="#/channel_list">All Channels</a></li>
+						      <li><a href="#/channel_list">Favorite Channel</a></li>
+						    </ul>
+					    </div>
+					    <div class="btn-group">
+							<a href="#/signup" class='btn btn-info'>Create free account</a>
+						</div>
+						<div class="btn-group">  
+							<a href="#/login" class='tdright btn btn-info'>Login</a>
+						</div>
+					</div>
+                </div>
+    		<div ng-view=""></div>
+		</div>
+	</div>
+</div>
+    
+        <!-- build:js scripts/plugins.js -->
+        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
+        <script src="bower_components/underscore/underscore.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js scripts/modules.js -->
+    	<script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/restangular/src/restangular.js"></script>
+        <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/controllers/users.js"></script>
+        <script src="scripts/controllers/channels.js"></script>
+        <script src="scripts/controllers/programs.js"></script>
+        <script src="scripts/controllers/friends.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/router.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
